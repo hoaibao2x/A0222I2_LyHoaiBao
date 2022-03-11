@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+  <body class="container">
+
+   <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+           <h2>FORM ĐĂNG KÝ</h2>
+           <!-- Fullname Input -->
+           <div class="form-group">
+               <label for="fullname">Họ và tên:</label>
+                <input class="form-control" type="text" name="name" id="fullname">
+           </div>
+            <!-- Email Input -->
+           <div class="form-group">
+               <label for="email">Email:</label>
+               <input class="form-control" type="text" name="email" id="email">
+           </div>
+           <!-- Phone Input -->
+           <div class="form-group">
+               <label for="phone">Số điện thoại:</label>
+               <input class="form-control" type="text" name="phone" id="phone">
+           </div>
+           <!-- Gender Input -->
+           <div class="form-group">
+               <label for="gender">Giới tính:</label>
+               <div class="form-inline">
+                    <!-- Male -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender1">
+                        <label class="form-check-label" for="gender1">Nam</label>
+                    </div>
+                    <!-- Female -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender2">
+                        <label for="gender2">Nữ</label>
+                    </div>
+                </div>
+           </div>
+           <!-- Submit -->
+           <input class="btn btn-primary" type="submit" name="" id="" value="Đăng ký">
+   </form>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

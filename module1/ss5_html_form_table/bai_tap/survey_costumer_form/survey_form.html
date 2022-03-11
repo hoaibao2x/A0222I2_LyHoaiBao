@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+
+        /* Label Under Input Style */
+        .input_text {
+            display: inline-block;
+            width: 6em;
+            position: relative;
+            top: -3em;
+        }
+
+        .under_text {
+            display: inline-block;
+            width: 6em;
+            margin-right: .5em;
+            padding-top: 1.5em;
+        }
+        /* Radio Rate Table */
+        .radio_rate {
+            text-align: center;
+        }
+
+        /* Small Label Style */
+        .small_label {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+  <body class="container">
+      
+    <form action="">
+        <h2 class="big_label">Market Research Survey</h2>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+        <hr>
+        <!-- Age Input -->
+        <div class="form-group">
+            <label class="small_label" for="">What is your age range ?</label>
+            <select style="width: 35%;" class="form-control" name="age" id="">
+                <option value="">35 - 50</option>
+                <option value="">25 - 34</option>
+                <option value="">35 - 50</option>
+                <option value="">50+</option>
+            </select>
+        </div>
+        <!-- Income Input -->
+        <div class="form-group">
+            <label class="small_label" for="">What is your yearly income range?</label>
+            <select style="width: 35%;" class="form-control" name="age" id="">
+                <option value="">$0 - $25,000</option>
+                <option value="">$25,001 - $50,000</option>
+                <option value="">$50,001 - $100,000</option>
+                <option value="">$100,000+</option>
+            </select>
+        </div>
+        <!-- Gender Input -->
+        <div class="form-group">
+            <label class="small_label" for="">Gender Identify</label>
+            <!-- Male -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <!-- Female -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <!-- Male -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="nonb">
+                <label class="form-check-label" for="nonb">Nonbinary</label>
+            </div>
+            <!-- Male -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="other_gender">
+                <label class="form-check-label" for="other_gender">Other</label>
+                <input id="other_gender" style="width: 25%;" class="form-control" type="text">
+                <small class="text-muted">Maximum of <b>250</b> characters.</small>
+            </div>
+        </div>
+        <!-- Have Purchased Input -->
+        <div class="form-group">
+            <label class="small_label" for="">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+            <!-- Product 1 -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label" for="">Product 1</label>
+            </div>
+            <!-- Product 2 -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label" for="">Product 2</label>
+            </div>
+            <!-- Product 3 -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label" for="">Product 3</label>
+            </div>
+        </div>
+        <!-- Time Use New Product Input -->
+        <div class="form-group">
+            <label class="small_label" for="">How often would you use our new product?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="time" id="daily">
+                <label class="form-check-label" for="daily">Daily</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="time" id="weekly">
+                <label class="form-check-label" for="weekly">Weekly</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="time" id="monthly">
+                <label class="form-check-label" for="monthly">Monthly</label>
+            </div>
+        </div>
+        <!-- Pay Input -->
+        <label class="small_label" for="">What would you pay for the new product?</label>
+        <div class="form-group">
+            <label class="under_text">Dollars <input class="input_text" name="member1" id="member1" /></label>
+            <label class="under_text">Cents <input class="input_text" name="member2" id="member2" /></label>
+        </div>
+        <!-- Feauture Input -->
+        <div class="form-group">
+            <label class="small_label" for="foo">What features would you like to see in the new product.</label>
+            <textarea class="form-control" name="" id="foo" cols="20" rows="7"></textarea>
+        </div>
+        <!-- Rate Input -->
+        <label for="">Please rate your level of agreement with the following statements.</label>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr style="text-align: center;">
+                    <th id="blank">&nbsp;</th>
+                    <th>Strongly Disagree</th>
+                    <th>Disagree</th>
+                    <th>Agree</th>
+                    <th>Strongly Agree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label class="small_label" >Our products are priced fairly.</label></td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="1"><input type="radio" name="select" id="1">1</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="2"><input type="radio" name="select" id="2">2</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="3"><input type="radio" name="select" id="3">3</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="4"><input type="radio" name="select" id="4">4</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-secondary">
+                    <td><label class="small_label" >Our products are high quality.</label></td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="2_1"><input type="radio" name="select_2" id="2_1">1</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="2_2"><input type="radio" name="select_2" id="2_2">2</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="2_3"><input type="radio" name="select_2" id="2_3">3</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="2_4"><input type="radio" name="select_2" id="2_4">4</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="small_label" >You would recommend our product to a friend or coworker.</label></td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="3_1"><input type="radio" name="select_3" id="3_1">1</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="3_2"><input type="radio" name="select_3" id="3_2">2</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="3_3"><input type="radio" name="select_3" id="3_3">3</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio_rate">
+                            <label for="3_4"><input type="radio" name="select_3" id="3_4">4</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Submit -->
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <img src="" alt="">
+        
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
