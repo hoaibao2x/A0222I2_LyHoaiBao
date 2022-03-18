@@ -9,28 +9,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body class="container">
-
-    <script>
-        var a = prompt('Nhap a');
-        var b = prompt('Nhap b');
-        var calc = a%b;
-        while (a < b) {
-            alert('a không được nhỏ hơn b !');
-            var a = prompt('Nhap a');
-            var b = prompt('Nhap b');
-            calc;
-        }
-        if(calc == 0) {
-            alert('a là bội số của b !');
-        }
-        else {
-            alert('a không là bội số của b !');
-        }
-
-    </script>
-
+  <body>
+      
     <!-- Optional JavaScript -->
+    <script>
+        let userName = prompt('Enter username: ');
+        
+        if (userName == 'Admin') {
+            let passWord = prompt('Enter password: ');
+            if (passWord == 'TheMaster') {
+                alert('Welcome !');
+            } else if (passWord == "") {
+                alert('Canceled !');
+            } else {
+                alert('Wrong password !');
+            }
+        } else {
+            alert("I don't know you !");
+        }
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

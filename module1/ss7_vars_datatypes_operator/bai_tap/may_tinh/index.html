@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+      <!-- Bootstrap CSS -->
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+</head>
+
+<body class="container">
+    ​
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control input" type="text" id="number1">
+        </div>
+        <div class="col-md-4">
+            <input class="form-control input" type="text" id="number2">
+        </div>
+    </div>
+     <br><br>
+    ​
+    <button class="btn btn-primary" onclick="addition()">Addition(+)</button>
+    <button class="btn btn-success" onclick="subtraction()">Subtraction(-)</button>
+    <button class="btn btn-warning" onclick="multiplication()">Multiplication(*)</button>
+    <button class="btn btn-info" onclick="division()">Division(/)</button>
+    ​
+    <p id="result"></p>
+    ​
+    <script>
+        let number1 = document.getElementById("number1");
+        let number2 = document.getElementById("number2");
+        let result;
+
+        function addition() {
+            result = parseInt(number1.value) + parseInt(number2.value);
+            document.getElementById("result").innerHTML = " <b style='color: red'> Result addition </b>" + result;
+        }
+        function subtraction() {
+            result = parseInt(number1.value) - parseInt(number2.value);
+            document.getElementById("result").innerHTML = " <b style='color: red'> Result addition </b>" + result;
+        }
+        function multiplication() {
+            result = parseInt(number1.value) * parseInt(number2.value);
+            document.getElementById("result").innerHTML = " <b style='color: red'> Result addition </b>" + result;
+        } function division() {
+            result = parseInt(number1.value) / parseInt(number2.value);
+            document.getElementById("result").innerHTML = " <b style='color: red'> Result addition </b>" + result;
+        }
+    </script>
+</body>
+
+</html>
