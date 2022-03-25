@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+
+        button {
+            width: 75px;
+            height: 75px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .screen {
+            font-size: 35px;
+            width: 330px;
+            height: 70px;
+        }
+    </style>
+
+</head>
+  <body class="container">
+
+    <form name="calc">
+        <!-- Input number screen -->
+        <input style="color: red;" name="result" class="form-control screen" type="text" readonly>
+
+        <!-- Line 1 -->
+        <div class="row">
+            <button type="button" id="btn1" class="btn btn-primary" value="1" onclick="calc.result.value += '1'">1</button>
+            <button type="button" id="btn2" class="btn btn-primary" value="2" onclick="calc.result.value += '2'">2</button>
+            <button type="button" id="btn3" class="btn btn-primary" value="3" onclick="calc.result.value += '3'">3</button>
+            <button type="button" id="plus" class="btn btn-warning" value="+" onclick="calc.result.value += '+'">+</button>
+        </div>
+
+        <!-- Line 2 -->
+        <div class="row">
+            <button type="button" id="btn4" class="btn btn-primary" value="4" onclick="calc.result.value += '4'">4</button>
+            <button type="button" id="btn5" class="btn btn-primary" value="5" onclick="calc.result.value += '5'">5</button>
+            <button type="button" id="btn6" class="btn btn-primary" value="6" onclick="calc.result.value += '6'">6</button>
+            <button type="button" class="btn btn-warning" value="-" onclick="calc.result.value += '-'">-</button>
+        </div>
+
+        <!-- Line 3 -->
+        <div class="row">
+            <button type="button" id="btn7" class="btn btn-primary" value="7" onclick="calc.result.value += '7'">7</button>
+            <button type="button" id="btn8" class="btn btn-primary" value="8" onclick="calc.result.value += '8'">8</button>
+            <button type="button" id="btn9" class="btn btn-primary" value="9" onclick="calc.result.value += '9'">9</button>
+            <button type="button" class="btn btn-warning" value="x" onclick="calc.result.value += '*'">x</button>
+        </div>
+
+        <!-- Line 4 -->
+        <div class="row">
+            <button type="reset" class="btn btn-danger">C</button>
+            <button type="button" class="btn btn-primary" value="0" onclick="calc.result.value += '0'">0</button>
+            <button type="button" class="btn btn-success" onclick="calc.result.value = eval(calc.result.value)">=</button>
+            <button type="button" class="btn btn-warning" onclick="calc.result.value += '/'">/</button>
+        </div>
+    </form>
+
+        
+
+
+      
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

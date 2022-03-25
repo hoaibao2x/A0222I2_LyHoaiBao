@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        .form-control {
+            width: 50%;
+        }
+        label {
+            font-weight: bold;
+        }
+        #output {
+            color: red;
+        }
+    </style>
+
+</head>
+  <body class="container">
+      
+    <form action="">
+        <!-- Title -->
+        <h2>Diện tích hình chữ nhật:</h2>
+        <!-- Input width field -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputWidth">Chiều dài (Đơn vị: cm):</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputWidth">
+        </div>
+        <!-- Input height field -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputHeight">Chiều rộng (Đơn vị: cm):</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputHeight">
+        </div>
+        <!-- Result -->
+        <h4 id="output"></h4>
+        <!-- Button field -->
+        <input class="btn btn-primary" type="button" value="Tính toán" onclick="calcRect()">
+        <input class="btn btn-danger" type="button" value="Reset" onclick="resetForm()">
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        /* Calc Rectangular Function */
+        function calcRect() {
+            let myWidth = parseInt(inputWidth.value);
+            let myHeight = parseInt(inputHeight.value);
+            let result = document.getElementById('output');
+
+            if (inputWidth.value == '' || inputHeight.value == '') {
+                alert('Vui lòng nhập đầy đủ chiều dài và chiều rộng !');
+            } else {
+                if (myWidth <= 0 || myHeight <= 0) {
+                    alert('Chiều dài và chiều rộng phải lớn hơn 0 !');
+                } else if (myWidth <= myHeight) {
+                    alert('Chiều dài phải lớn hơn chiều rộng !');
+                } else {
+                    let calc = myWidth * myHeight;
+                    result.innerHTML = 'Diện tích hình chữ nhật: ' + calc + ' cm²';
+                }
+            }
+        }
+
+        /* Reset Form Function */
+        function resetForm() {
+            inputWidth.value = '';
+            inputHeight.value = '';
+
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

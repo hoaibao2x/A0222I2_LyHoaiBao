@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+        .form-control {
+            width: 50%;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+  <body class="container">
+      
+    <form action="">
+        <!-- Title -->
+        <h2>Kiểm tra số thực</h2>
+        <!-- Input value a -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputValue1">Số a:</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputValue1">
+        </div>
+        <!-- Input value b -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputValue2">Số b:</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputValue2">
+        </div>
+        <!-- Input value c -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputValue3">Số c:</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputValue3">
+        </div>
+        <!-- Result -->
+        <h4 id="output"></h4>
+        <!-- Button field -->
+        <input class="btn btn-primary" type="button" value="Kiểm tra" onclick="checkValue()">
+        <input class="btn btn-danger" type="button" value="Reset" onclick="resetForm()">
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        /* Check function */
+        function checkValue() {
+            let value1 = parseFloat(inputValue1.value);
+            let value2 = parseFloat(inputValue2.value);
+            let value3 = parseFloat(inputValue3.value);
+            let result = document.getElementById('output');
+
+            if (inputValue1.value == '' || inputValue2.value == '' || inputValue3.value == '') {
+                alert('Vui lòng nhập đầy đủ dữ liệu !');
+            } else {
+                if (value1 < 0 || value2 < 0 || value3 < 0) {
+                    result.style.color = '#ff0000'
+                    result.innerHTML = 'a, b và c không phải là cạnh của một tam giác !';
+                } else if (value1 + value2 > value3 || value2 + value3 > value1 || value1 + value3 > value2) {
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'a, b và c là cạnh của một tam giác !';
+                }
+            }
+        }
+
+        /* Reset form function */
+        function resetForm() {
+            inputValue1.value = '';
+            inputValue2.value = '';
+            inputValue3.value = '';
+
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

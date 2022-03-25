@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+        .form-control {
+            width: 50%;
+        }
+        label {
+            font-weight: bold;
+        }
+        #output {
+            color: red;
+        }
+    </style>
+
+</head>
+  <body class="container">
+
+    <form action="">
+        <!-- Title -->
+        <h2>Tính cước điện thoại</h2>
+
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputSelect">Gói cước đang sử dụng: </label>
+            <!-- Select field -->
+            <select class="form-control" name="" id="inputSelect">
+                <option value="1">Basic+</option>
+                <option value="2">Family</option>
+                <option value="3">Corporate</option>
+                <option value="4">VIP</option>
+            </select>
+        </div>
+
+
+        <!-- Used times field -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="">Thời gian sử dụng(phút): </label>
+            <!-- Input field -->
+            <input class="form-control" type="text" id="inputTime">
+        </div>
+
+        <!-- Result -->
+        <h4 id="output"></h4>
+
+        <!-- Button field -->
+        <input class="btn btn-success" type="button" value="Giá cước gọi nội mạng" onclick="calcNet1()">
+        <input class="btn btn-info" type="button" value="Giá cước gọi ngoại mạng" onclick="calcNet2()">
+        <input class="btn btn-warning" type="button" value="Reset" onclick="resetForm()">
+    </form>
+      
+    <!-- Optional JavaScript -->
+    <script>
+
+        /* Calc Net 1 Function */
+        function calcNet1() {
+            let mySelect = inputSelect.value;
+            let timeUsed = parseInt(inputTime.value);
+            let result = document.getElementById('output');
+
+            if (inputTime.value == '') {
+                alert('Vui lòng nhập thời gian sử dụng !');
+            } else {
+                if (timeUsed < 0) {
+                    alert('Vui lòng nhập thời gian lớn hơn 0 !');
+                } else if (mySelect == 1 || mySelect == 2 || mySelect == 3) {
+                    let calc = timeUsed * 890;
+                    result.innerHTML = 'Tổng tiền gói cước nội mạng: ' + calc + ' VNĐ';
+                } else if(mySelect == 4) {
+                    let calc = timeUsed * 790;
+                    result.innerHTML = 'Tổng tiền gói cước nội mạng: ' + calc + ' VNĐ';
+                }
+            }
+        }
+
+        /* Calc Net 2 Function */
+        function calcNet2() {
+            let mySelect = inputSelect.value;
+            let timeUsed = parseInt(inputTime.value);
+            let result = document.getElementById('output');
+
+            if (inputTime.value == '') {
+                alert('Vui lòng nhập thời gian sử dụng !');
+            } else {
+                if (timeUsed < 0) {
+                    alert('Vui lòng nhập thời gian lớn hơn 0 !');
+                } else if (mySelect == 1) {
+                    let calc = timeUsed * 990;
+                    result.innerHTML = 'Tổng tiền gói cước ngoại mạng: ' + calc + ' VNĐ';
+                } else if (mySelect == 2 || mySelect == 3) {
+                    let calc = timeUsed * 1090;
+                    result.innerHTML = 'Tổng tiền gói cước ngoại mạng: ' + calc + ' VNĐ';
+                } else if (mySelect == 4) {
+                    let calc = timeUsed * 890;
+                    result.innerHTML = 'Tổng tiền gói cước ngoại mạng: ' + calc + ' VNĐ';
+                }
+            }
+        }
+
+        /* Reset Function */
+        function  resetForm() {
+            inputSelect.value = 1;
+            inputTime.value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+        small {
+            color: red;
+        }
+    </style>
+
+</head>
+  <body class="container">
+      
+    <form action="">
+        <!-- Title -->
+        <h2>Tính thuế thu nhập cá nhân</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Select field -->
+                <select class="form-control" id="inputSelect" onclick="loadPerc()">
+                    <option value="" disabled selected hidden>Chọn khoảng thu nhập của bạn</option>
+                    <option value="1">Đến 5 triệu đồng (trđ)</option>
+                    <option value="2">Trên 5 trđ đến 10 trđ</option>
+                    <option value="3">Trên 10 trđ đến 18 trđ</option>
+                    <option value="4">Trên 18 trđ đến 32 trđ</option>
+                    <option value="5">Trên 32 trđ đến 52 trđ</option>
+                    <option value="6">Trên 52 trđ đến 80 trđ</option>
+                    <option value="7">Trên 80 trđ</option>
+                </select>
+                <!-- Perc label -->
+                <small id="outputPerc"></small>
+            </div>
+            <!-- Input value field -->
+            <div class="col-md-4">
+                <input class="form-control" type="text" id="inputValue" placeholder="Tổng thu nhập">
+            </div>
+            <!-- Button field -->
+            <div class="col-md-1">
+                <input class="btn btn-primary" type="button" value="Tính toán" onclick="calcPerc()">
+            </div>
+            <div class="col-md-1">
+                <input class="btn btn-danger" type="button" value="Reset" onclick="resetForm()">
+            </div>
+        </div>
+        <!-- Result -->
+        <h4 id="output"></h4>
+
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        /* Load perc function */
+        function loadPerc() {
+            let mySelect = inputSelect.value;
+            let result = document.getElementById('outputPerc');
+
+            if (mySelect == 1) {
+                result.innerHTML = 'Thuế suất: 5%';
+            } else if (mySelect == 2) {
+                result.innerHTML = 'Thuế suất: 10%';
+            } else if (mySelect == 3) {
+                result.innerHTML = 'Thuế suất: 15%';
+            } else if (mySelect == 4) {
+                result.innerHTML = 'Thuế suất: 20%';
+            } else if (mySelect == 5) {
+                result.innerHTML = 'Thuế suất: 25%';
+            } else if (mySelect == 6) {
+                result.innerHTML = 'Thuế suất: 30%';
+            } else {
+                result.innerHTML = 'Thuế suất: 35%';
+            }
+        }
+
+        /* Calc perc function */
+        function calcPerc() {
+            let mySelect = inputSelect.value;
+            let myValue = parseInt(inputValue.value);
+            let result = document.getElementById('output');
+
+            if (inputSelect.value == 'default' || inputValue.value == '') {
+                alert('Vui lòng nhập đầy đủ dữ liệu !');
+            } else {
+                if (myValue < 0) {
+                    result.innerHTML = 'Thu nhập không được nhỏ hơn 0 !';
+                } else if (mySelect == 1 && myValue >= 0 && myValue <= 5000000) {
+                    let calc = myValue * (5 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else if (mySelect == 2 && myValue > 5000000 && myValue <= 10000000) {
+                    let calc = myValue * (10 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else if (mySelect == 3 && myValue > 10000000 && myValue <= 18000000) {
+                    let calc = myValue * (15 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else if (mySelect == 4 && myValue > 18000000 && myValue <= 32000000) {
+                    let calc = myValue * (20 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else if (mySelect == 5 && myValue > 32000000 && myValue <= 52000000) {
+                    let calc = myValue * (25 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else if (mySelect == 6 && myValue > 52000000 && myValue <= 80000000) {
+                    let calc = myValue * (30 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else if (mySelect == 7 && myValue > 80000000) {
+                    let calc = myValue * (35 / 100);
+                    let outputValue = calc.toFixed(2);
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Thuế thu nhập cá nhân mà bạn cần phải đóng là: ' + outputValue + ' VNĐ';
+                } else {
+                    result.style.color = '#ff0000';
+                    result.innerHTML = 'Vui lòng nhập lại dữ liệu !';
+                }
+            }
+        }
+
+        /* Reset form function */
+        function resetForm() {
+            inputSelect.value = '';
+            document.getElementById('outputPerc').innerHTML = '';
+            inputValue.value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

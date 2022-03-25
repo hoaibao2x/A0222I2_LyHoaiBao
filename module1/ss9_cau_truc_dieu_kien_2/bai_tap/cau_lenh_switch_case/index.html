@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+        form {
+            padding-top: 10%;
+        }
+
+        #result {
+            color: red;
+        }
+    </style>
+
+</head>
+  <body class="container">
+
+    <form>
+        <div class="form-group">
+            <div class="row">
+                <!-- Input number -->
+                <div class="col-md-6">
+                    <input id='inputMonth' class="form-control" type="number">
+                </div>
+
+                <!-- Submit button -->
+                <div class="col-md-6">
+                    <input onclick="calc()" class="btn btn-primary" type="button" value="Tính số ngày">
+                </div>
+            </div>          
+        </div>
+        
+        <!-- Label -->
+        <h2 id='result'></h2>
+    </form>
+      
+    <!-- Optional JavaScript -->
+    <script>
+        function calc() {
+            var month = parseInt(document.getElementById('inputMonth').value);
+
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById('result').innerHTML = 'Tháng' + ' ' + month + ' ' + 'có 31 ngày';
+                    break;
+
+                case 2: 
+                    document.getElementById('result').innerHTML = 'Tháng' + ' ' + month + ' ' + 'có 28 hoặc 29 ngày';
+                    break;
+            
+                case 4: 
+                case 6: 
+                case 9: 
+                case 11: 
+                    document.getElementById('result').innerHTML = 'Tháng' + ' ' + month + ' ' + 'có 30 ngày';
+                    break;
+
+                default:
+                    alert('Vui lòng nhập lại !');
+                    document.getElementById('inputMonth').value = '';
+                    document.getElementById('result').innerHTML = '';
+                    break;
+            }
+        }
+
+
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

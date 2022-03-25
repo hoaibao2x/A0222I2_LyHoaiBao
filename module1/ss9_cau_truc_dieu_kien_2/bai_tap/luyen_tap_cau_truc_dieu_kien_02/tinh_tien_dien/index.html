@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="container">
+      
+    <form action="">
+        <!-- Title -->
+        <h2>Tính tiền điện</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Select value -->
+                <div class="form-group">
+                    <select class="form-control" id="inputSelect">
+                        <option value="default" disabled selected hidden>Vui lòng chọn mức sử dụng điện</option>
+                        <option value="1">Bậc 1 (0 đến 50kWh)</option>
+                        <option value="2">Bậc 2 (51 đến 100kWh)</option>
+                        <option value="3">Bậc 3 (101 đến 200 kWh)</option>
+                        <option value="4">Bậc 4 (201 đến 300 kWh)</option>
+                        <option value="5">Bậc 5 (301 đến 400 kWh)</option>
+                        <option value="6">Bậc 6 (401 kWh trở lên)</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Input value -->
+            <div class="col-md-5">
+                <input class="form-control" type="text" id="inputValue" placeholder="Nhập tổng số lượng điện tiêu thụ (Đơn vị: kWh)">
+            </div>
+            <!-- Button field --> 
+            <div class="col-md-1">
+                <input class="btn btn-primary" type="button" value="Tính toán" onclick="checkSelect()">
+            </div>
+            <div class="col-md-1">
+                <input class="btn btn-danger" type="button" value="Reset" onclick="resetForm()">
+            </div>
+        </div>
+        <!-- Result -->
+        <h4 id="output"></h4>
+        
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        /* Calc function */
+        function checkSelect() {
+            let mySelect = inputSelect.value;
+            let myValue = parseInt(inputValue.value);
+            let result = document.getElementById('output');
+
+            if (inputSelect.value == '' || inputValue.value == '') {
+                alert('Vui lòng điền đầy đủ dữ liệu !');
+            } else {
+                if (myValue <= 0) {
+                    result.style.color = '#ff0000';
+                    result.innerHTML = 'Tổng số lượng điện tiêu thụ phải lớn hơn 0 !';
+                } else if (mySelect == 1 && myValue > 0 && myValue < 50) {
+                    let calc = myValue * 1678;
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Tổng tiền điện phải trả là: ' + calc + ' VNĐ';
+                } else if (mySelect == 2 && myValue > 51 && myValue < 100) {
+                    let calc = myValue * 1734;
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Tổng tiền điện phải trả là: ' + calc + ' VNĐ';
+                } else if (mySelect == 3 && myValue > 101 && myValue < 200) {
+                    let calc = myValue * 2014;
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Tổng tiền điện phải trả là: ' + calc + ' VNĐ';
+                } else if (mySelect == 4 && myValue > 201 && myValue < 300) {
+                    let calc = myValue * 2536;
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Tổng tiền điện phải trả là: ' + calc + ' VNĐ';
+                } else if (mySelect == 5 && myValue > 301 && myValue < 400) {
+                    let calc = myValue * 2834;
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Tổng tiền điện phải trả là: ' + calc + ' VNĐ';
+                } else if (mySelect == 6 && myValue > 400) {
+                    let calc = myValue * 2927;
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Tổng tiền điện phải trả là: ' + calc + ' VNĐ';
+                } else {
+                    result.style.color = '#ff0000';
+                    result.innerHTML = 'Vui lòng nhập lại dữ liệu !';
+                }
+            }
+        }
+
+        /* Reset form function */
+        function resetForm() {
+            inputSelect.value = 'default';
+            inputValue.value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

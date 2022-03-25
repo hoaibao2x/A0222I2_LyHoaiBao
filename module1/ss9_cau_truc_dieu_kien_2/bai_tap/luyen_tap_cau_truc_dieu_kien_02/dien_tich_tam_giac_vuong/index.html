@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        .form-control {
+            width: 50%;
+        }
+        label {
+            font-weight: bold;
+        }
+        #output {
+            color: red;
+        }
+    </style>
+
+</head>
+  <body class="container">
+      
+    <form action="">
+        <!-- Title -->
+        <h2>Tính diện tích tam giác vuông</h2>
+        <!-- Input height value -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputHeight">Chiều cao (Đơn vị: cm):</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputHeight">
+        </div>
+        <!-- Input bottom width value -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputBoWidth">Chiều dài cạnh đáy (Đơn vị: cm):</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputBoWidth">
+        </div>
+        <!-- Result -->
+        <h4 id="output"></h4>
+        <!-- Button field -->
+        <input class="btn btn-primary" type="button" value="Tính toán" onclick="calcTrian()">
+        <input class="btn btn-danger" type="button" value="Reset" onclick="resetForm()">
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        /* Calc triangle function */
+        function calcTrian() {
+            let myHeight = parseFloat(inputHeight.value);
+            let myBoWidth = parseFloat(inputBoWidth.value);
+            let result = document.getElementById('output');
+
+            if (inputHeight.value == '' || inputBoWidth.value == '') {
+                alert('Vui lòng nhập đầy đủ dữ liệu !');
+            } else {
+                if (myHeight <= 0 || myBoWidth <= 0) {
+                    alert('Dữ liệu nhập vào phải lớn hơn 0 !');
+                } else {
+                    let calc = (myHeight * myBoWidth) / 2;
+                    let myResult = calc.toFixed(1);
+                    result.innerHTML = 'Diện tích tam giác vuông: ' + myResult + ' cm²';
+                }
+            }
+        }
+
+        /* Reset form function */
+        function resetForm() {
+            inputHeight.value = '';
+            inputBoWidth.value = '';
+
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

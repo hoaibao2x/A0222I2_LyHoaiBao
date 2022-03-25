@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <style>
+        .form-control {
+            width: 50%;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+  <body class="container">
+      
+    <form action="">
+        <!-- Title -->
+        <h2>Lãi suất ngân hàng:</h2>
+        <!-- Input deposits value -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputDepo">Số tiền gửi:</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputDepo">
+        </div>
+        <!-- Input interest rate -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputRates">Lãi suất trong 1 năm (Đơn vị: %):</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputRates">
+        </div>
+        <!-- Total months -->
+        <div class="form-group">
+            <!-- Label -->
+            <label for="inputMonths">Số tháng gửi:</label>
+            <!-- Input -->
+            <input class="form-control" type="text" id="inputMonths">
+        </div>
+        <!-- Result -->
+        <h4 id="output"></h4>
+        <!-- Button field -->
+        <input class="btn btn-primary" type="button" value="Tính toán" onclick="calcValue()">
+        <input class="btn btn-danger" type="button" value="Reset" onclick="resetForm()">
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        /* Calc function */
+        function calcValue() {
+            let myDepo = parseInt(inputDepo.value);
+            let myRates = parseInt(inputRates.value);
+            let myMonths = parseInt(inputMonths.value);
+            let result = document.getElementById('output');
+
+            if (inputDepo.value == '' || inputRates.value == '' || inputMonths.value == '') {
+                alert('Vui lòng nhập đầy đủ dữ liệu !');
+            } else {
+                if (myDepo < 0 || myRates < 0 || myMonths <= 0 || myMonths > 12) {
+                    result.style.color = '#ff0000';
+                    result.innerHTML = 'Dữ liệu nhập vào không hợp lệ !';
+                } else {
+                    let calc = myDepo * (myRates / 100) / 360 * (myMonths * 30);
+                    let myValue = calc.toFixed(2);
+
+                    result.style.color = '#33cc33';
+                    result.innerHTML = 'Số tiền lãi bạn nhận được sau ' + myMonths + ' tháng là: ' + myValue + ' VNĐ';
+                }
+            }
+        }
+
+        /* Reset form function */
+        function resetForm() {
+            inputDepo.value = '';
+            inputRates.value = '';
+            inputMonths.value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
