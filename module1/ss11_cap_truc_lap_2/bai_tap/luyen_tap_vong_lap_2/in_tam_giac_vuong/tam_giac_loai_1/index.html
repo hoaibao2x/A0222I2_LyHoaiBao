@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="container">
+      
+    <!-- Optional JavaScript -->
+    <script>
+
+        /* Hinh 1 */
+        for (let i = 0; i < 5; i++) {
+          for (let j = 0; j <= i; j++) {
+            document.write('*');           
+          }
+          document.write('<br>');
+        }
+
+        document.write('<br>', '<br>', '<br>');
+        
+
+        /* Hinh 2 */
+        for (let i = 0; i < 5; i++) {
+          for (let j = 5; j > i; j--) {
+            document.write('*');    
+          }  
+          document.write('<br>');        
+        }
+
+        document.write('<br>', '<br>', '<br>');
+
+        /* Hinh 3 */
+        for (let i = 0; i < 5; i++) {
+          for (let j = 0; j < 5; j++) {
+            if (i == 0 && (j == 0 || j == 1 || j == 2 || j == 3) 
+            ||  (i == 1 && (j == 0 || j == 1 || j == 2)) 
+            || (i == 2 && (j == 0 || j == 1)) 
+            || (i == 3 && j == 0)) {
+              document.write('&nbsp;&nbsp');
+            } else {
+              document.write('*');
+            }       
+          }  
+          document.write('<br>');      
+        }
+
+        document.write('<br>', '<br>', '<br>');
+
+        /* Hinh 4 */
+        for (let i = 0; i <5; i++) {
+          for (let j = 0; j < 5; j++) {
+            if ((i == 4 && (j == 0 || j == 1 || j == 2 || j == 3)) 
+            || (i == 3 && (j == 0 || j == 1 || j == 2)) 
+            || (i == 2 && (j == 0 || j == 1)) 
+            || (i == 1 && j == 0)) {
+              document.write('&nbsp;&nbsp');
+            } else {
+              document.write('*');
+            }
+          }
+          document.write('<br>')          
+        }
+
+        document.write('<br>', '<br>', '<br>');
+
+        /* Hinh 5 */
+        for (let i = 1; i <= 5; i++) {
+          for (let j = 1; j <= 21; j++) {
+            if ((j == 1) || (j == 21) || (i == 1) || (i == 5)) {
+              document.write('* &nbsp');
+            } else {
+              document.writeln('&nbsp;&nbsp;&nbsp');
+            }
+          }
+          document.write('<br>');        
+        }
+
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
