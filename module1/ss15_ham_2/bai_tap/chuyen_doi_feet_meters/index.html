@@ -38,13 +38,13 @@
 
     <!-- Optional JavaScript -->
     <script>
-        //Feet to meters fucntion
+        //Feet to meter fucntion
         function feetToMeter(feet) {
             let meter = parseFloat(inputNum.value);
             feet = 0.305 * meter;
             document.getElementById('result').innerHTML = meter + ' ft = ' + feet + ' m';
 
-            return true;
+            return feet;
         }
 
         //Meter to feet function
@@ -53,7 +53,7 @@
             meter = 3.279 * feet;
             document.getElementById('result').innerHTML = feet + ' m = ' + meter + ' ft';
 
-            return true;
+            return meter;
         }
 
         //Select function
@@ -65,7 +65,7 @@
                 let showResult = meterToFeet();
             }
 
-            return true;
+            return checkSelect;
         }
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

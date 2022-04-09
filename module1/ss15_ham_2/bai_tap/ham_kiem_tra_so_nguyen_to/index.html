@@ -14,28 +14,27 @@
     <!-- Optional JavaScript -->
     <script>
       function isPrime(number) {
-        if (number < 2) {
-          let message = 'Số nguyên tố không được nhỏ hơn 2 !'
-          return message;
-        } else if (number >= 10000) {
-          let message = 'Số nhập vào không được lớn hơn 10000';
-          return message;
-        } 
-         else {
-           if (number % 2 == 0 && number > 2) {
-             let message = number + ' không phải là số nguyên tố !';
-             return message;
-           } else {
-            let message = number + ' là số nguyên tố !';
-            return message;
+           for (let i = 2; i <= Math.sqrt(number); i++) {
+             if (number % i == 0) {
+               return false;
+             }
            }
-        }
         return true;
       }
 
-      let inputNum = window.prompt();
-      let checkNum = isPrime(inputNum);
-      alert(checkNum);
+      let inputValue = parseInt(prompt('Input value'));
+      if (inputValue < 2) {
+        alert('Số nguyên tố không được nhỏ hơn 2 !');
+      } else if (inputValue >= 10000) {
+        alert('Số nhập vào không được lớn hơn hoặc bằng 10000 !');
+      } else {
+        if (isPrime(inputValue)) {
+        alert(inputValue + ' là số nguyên tố !');
+        } else {
+          alert(inputValue + ' không phải số nguyên tố !');
+        }
+      }
+      
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
