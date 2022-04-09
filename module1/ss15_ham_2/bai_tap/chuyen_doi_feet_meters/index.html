@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="container">
+      
+    <form>
+        <h2>Feet & Meters</h2>
+        <div class="form-group">
+            <label for="">Input value</label>
+            <div class="row">
+                <!-- Input field -->
+                <div class="col-md-2">
+                    <input class="form-control" type="text" name="" id="inputNum">
+                </div>
+                <!-- Select field -->
+                <div class="col-md-2">
+                    <select id="mySelect" class="form-control">
+                        <option value="F">Feet to Meters</option>
+                        <option value="T">Meters to Feet</option>
+                    </select>
+                </div>
+                <!-- Button field --> 
+                <div class="col-md-2">
+                    <input class="btn btn-primary" type="button" value="Calc" onclick="selectConvert()">
+                </div>
+            </div>
+            <div style="color: red;" id="result"></div>
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <script>
+        //Feet to meters fucntion
+        function feetToMeter(feet) {
+            let meter = parseFloat(inputNum.value);
+            feet = 0.305 * meter;
+            document.getElementById('result').innerHTML = meter + ' ft = ' + feet + ' m';
+
+            return true;
+        }
+
+        //Meter to feet function
+        function meterToFeet(meter) {
+            let feet = parseFloat(inputNum.value);
+            meter = 3.279 * feet;
+            document.getElementById('result').innerHTML = feet + ' m = ' + meter + ' ft';
+
+            return true;
+        }
+
+        //Select function
+        function selectConvert() {
+            let checkSelect = mySelect.value;
+            if (checkSelect == 'F') {
+                let showResult = feetToMeter();
+            } else {
+                let showResult = meterToFeet();
+            }
+
+            return true;
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
