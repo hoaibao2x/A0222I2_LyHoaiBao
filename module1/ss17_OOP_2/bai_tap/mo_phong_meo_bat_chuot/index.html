@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <script>
+      class Animal {
+        constructor(name, weight, speed) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+        }
+      }
+
+      class Rat extends Animal {
+        constructor(name, weight, speed, status) {
+          super(name, weight, speed);
+          this.status = status;
+        }
+
+        getName() {
+          return this.name;
+        }
+
+        getSpeed() {
+          return this.speed;
+        }
+
+        setSpeed(speed) {
+          this.speed = speed;
+        }
+
+        setStatus(status) {
+          this.status = status;
+        }
+
+        run() {
+          console.log("Chuột bắt đầu chạy");
+        }
+
+        ratMessage(message) {
+          console.log(this.getName(), ":", (this.message = message));
+        }
+      }
+
+      class Cat extends Animal {
+        constructor(name, weight, speed) {
+          super(name, weight, speed);
+        }
+
+        getName() {
+          return this.name;
+        }
+
+        catMessage(message) {
+          console.log(this.getName(), ":", (this.message = message));
+        }
+
+        getSpeed() {
+          return this.speed;
+        }
+
+        run() {
+          console.log("Mèo bắt đầu chạy");
+        }
+
+        catch(rat) {
+          if (rat.getSpeed() < this.getSpeed()) {
+            console.log(this.getName(), ":", "Bắt được bạn chuột ròi nha !");
+            if (rat.status) {
+              console.log(
+                this.getName(),
+                ":",
+                "Thơm ngon mời bạn ăn nha" +
+                  " tui đây không chờ bạn nữa giờ tui ăn liền"
+              );
+              console.log("Cân nặng của Tom:", (this.weight += rat.weight));
+            } else {
+              console.log(this.getName(), ":", "Gớm thế thôi không ăn đâu ...");
+            }
+          } else {
+            console.log(this.getName(), ":", "Khiếp chạy nhanh thế ...");
+          }
+        }
+      }
+
+      let theRat = new Rat("Jerry", 3, 20, true);
+      let theCat = new Cat("Tom", 5, 35);
+
+      theRat.ratMessage("Hi mèo");
+      theCat.catMessage("Hi chuột");
+      theCat.catMessage(
+        "Bây giờ mình chơi đuổi bắt" + " mình mà bắt được là mình ăn bạn đó nha"
+      );
+      theRat.ratMessage("Okie chơi luôn");
+      theRat.run();
+      theCat.run();
+      theCat.catch(theRat);
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
